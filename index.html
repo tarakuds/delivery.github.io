@@ -349,20 +349,50 @@
             window.alert("Directions request failed here");
             return;
           } else {
+            var kilometer = directionsData.distance.text;
             // converting duration of travel to min
             time = directionsData.duration.value / 60;
 
             //multiplying the time by price per min
             let price = 75 * time;
             // let price = 20 * time * weight;
+            if (parseFloat(kilometer) < 10) {
+              let price = 700;
+              document.getElementById("get_estimate").style.color = "green";
+              document.getElementById("get_estimate").innerHTML =
+                "Estimated price";
+              document.getElementById("estimate_result").innerHTML =
+                "Your bill is <b>&#8358</b><strong>" +
+                Math.ceil(price / 100.0) * 100 +
+                '</strong><br><a href="#">Proceed</a>';
+            } else if (parseFloat(kilometer) > 47) {
+              let price = 2500;
+              document.getElementById("get_estimate").style.color = "green";
+              document.getElementById("get_estimate").innerHTML =
+                "Estimated price";
+              document.getElementById("estimate_result").innerHTML =
+                "Your bill is <b>&#8358</b><strong>" +
+                Math.ceil(price / 100.0) * 100 +
+                '</strong><br><a href="#">Proceed</a>';
+            } else {
+              let bill = 30 * time;
+              let price = 0 + bill;
+              document.getElementById("get_estimate").style.color = "green";
+              document.getElementById("get_estimate").innerHTML =
+                "Estimated price";
+              document.getElementById("estimate_result").innerHTML =
+                "Your bill is <b>&#8358</b><strong>" +
+                Math.ceil(price / 100.0) * 100 +
+                '</strong><br><a href="#">Proceed</a>';
+            }
 
-            document.getElementById("get_estimate").style.color = "green";
-            document.getElementById("get_estimate").innerHTML =
-              "Estimated price";
-            document.getElementById("estimate_result").innerHTML =
-              "Your bill is <b>&#8358</b><strong>" +
-              Math.ceil(price / 100.0) * 100 +
-              '</strong><br><a href="#">Proceed</a>';
+            // document.getElementById("get_estimate").style.color = "green";
+            // document.getElementById("get_estimate").innerHTML =
+            //   "Estimated price";
+            // document.getElementById("estimate_result").innerHTML =
+            //   "Your bill is <b>&#8358</b><strong>" +
+            //   Math.ceil(price / 100.0) * 100 +
+            //   '</strong><br><a href="#">Proceed</a>';
           }
         }
       });
