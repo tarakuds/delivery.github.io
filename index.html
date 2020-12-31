@@ -1,7 +1,3 @@
-<?php
- // session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -100,16 +96,7 @@
               <div class="card card-signup">
                 <!-- Form Estimation -->
                 <center>
-                  <?php
-                      //echo "yes i hav ebeenlmd<br/>";
-                      $address = "";
-                      if (isset($_POST['check_estimate'])){
-                        echo "I am clicked<br/>";
-                        $address = $_POST['pickup_address'];
-                        echo $address;
-                      }
-                     
-                  ?>
+                
                 <!-- <form action="receipt_process.php" class="" method="post"> -->
                    <form action="" class="" method="post">
                     <div id="lat" hidden></div>
@@ -419,10 +406,4 @@ function reply() {
   console.log(address1value);  
 }
   </script>
-  <!-- <script src="js/click.js">
-    // var res = "success";
-  </script> -->
-  <?php
-   //echo "<script>document.writeln(res);</script>";
-?>
 </html>
