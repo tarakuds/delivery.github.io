@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/customestyle.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/material.css" />
+    <!-- <link rel="stylesheet" href="css/responsiveness.css" /> -->
+    <link rel="stylesheet" href="css/vegas.css" />
+
+    <title>Deliverable</title>
+  </head>
+  <body class="signup-page homepage-banner">
+    <nav class="navbar navbar-transparent navbar-absolute">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#navigation-example"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand hidden-xs" href="#"
+            ><img src="" style="width: 250px"
+          /></a>
+          <a class="navbar-brand visible-xs" href="#"
+            ><img src="#" style="width: 250px" alt="logo"
+          /></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navigation-example">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"> Be a rider </a>
+            </li>
+            <li>
+              <a href="#"> Invest </a>
+            </li>
+            <li>
+              <a href="#"> <i class="material-icons">folder</i>Business </a>
+            </li>
+            <li>
+              <a href="#"> <i class="material-icons">input</i> Login </a>
+            </li>
+            <li>
+              <a href="#"> <i class="material-icons">unarchive</i> Sign Up </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+      <div class="header header-filter">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7 col-sm-6">
+              <div class="card-signup"></div>
+            </div>
+            <div class="col-md-5 col-sm-6">
+              <div class="card card-signup">
+                <!-- Form Estimation -->
+                <center>
+                  <form action="" class="" method="post">
+                    <div id="lat" hidden></div>
+                    <div id="long" hidden></div>
+                    <div id="new" hidden></div>
+                    <div id="year" hidden></div>
+
+                    <div
+                      id="get-estimate"
+                      class="header header-danger text-center"
+                    >
+                      <h3 id="get_estimate">Get Estimate</h3>
+                      <h3 id="estimate_result"></h3>
+                    </div>
+
+                    <div
+                      id="show-estimate"
+                      class="header header-success text-center"
+                      style="display: none"
+                    ></div>
+
+                    <div class="content">
+                      <!-- FIRST DROP DOWN MENU -->
+                      <div class="input-group address1">
+                        <span class="input-group-addon">
+                          <i class="material-icons">location_on</i>
+                        </span>
+                        <select
+                          class="form-control"
+                          name="pick-up"
+                          id="address1"
+                        >
+                          <option value="">Pick Up</option>
+                          <option value="abraham adesanya">
+                            Abraham Adesanya
+                          </option>
+                          <option value="abule egba">Abule Egba</option>
+                          <option value="agege">Agege</option>
+                          <option value="agungi femi">Agungi Femi</option>
+                          <option value="ajah">Ajah</option>
+                          <option value="ajao estate">Ajao Estate</option>
+                          <option value="alaba">Alaba</option>
+                          <option value="alausa">Alausa</option>
+                          <option value="alimosho">Alimosho</option>
+                          <option value="alpha beach">Alpha Beach</option>
+                          <option value="amuwo odofin">Amuwo Odofin</option>
+                          <option value="anthony">Anthony</option>
+                          <option value="apapa">Apapa</option>
+                          <option value="badore">Badore</option>
+                          <option value="banana island">Banana Island</option>
+                          <option value="bariga">Bariga</option>
+                          <option value="chevron">Chevron VGC</option>
+                          <option value="chisco">Chisco</option>
+                          <option value="costain">Costain</option>
+                          <option value="dolphin estate">Dolphin Estate</option>
+                          <option value="egbeda">Egbeda</option>
+                          <option value="festac">Festac</option>
+                          <option value="gbagada">Gbagada</option>
+                          <option value="gowon estate">
+                            Gowon Estate, Ipaja
+                          </option>
+                          <option value="ifako-ijaye">Ifako Ijaye</option>
+                          <option value="iba">Iba</option>
+                          <option value="idimu">Idimu</option>
+                          <option value="igando">igando</option>
+                          <option value="iganmu">Iganmu</option>
+                          <option value="iju-ishaga">Iju Ishaga</option>
+                          <option value="ijora">Ijora</option>
+                          <option value="ikeja">Ikeja</option>
+                          <option value="ikorodu">Ikorodu</option>
+                          <option value="ikoyi">Ikoyi</option>
+                          <option value="ikotun">Ikotun</option>
+                          <option value="iyanaoworo">Iyana-Oworo</option>
+                          <option value="lagos island">Lagos Island</option>
+                          <option value="lasu">LASU</option>
+                          <option value="lekki-phase 1">Lekki Phase 1</option>
+                          <option value="lekki-phase 2">Lekki Phase 2</option>
+                          <option value="magodo">Magodo</option>
+                          <option value="marina">Marina</option>
+                          <option value="maryland">Maryland</option>
+                          <option value="mile 2">Mile 2</option>
+                          <option value="mile 12">Mile 12</option>
+                          <option value="mma1">
+                            Muritala Muhammed Airport 1
+                          </option>
+                          <option value="mma2">
+                            Muritala Muhammed Airport 2
+                          </option>
+                          <option value="mushin">Mushin</option>
+                          <option value="ketu">Ketu</option>
+                          <option value="navy town">Navy Town</option>
+                          <option value="obalende">Obalende</option>
+                          <option value="ogba">Ogba</option>
+                          <option value="ojo">Ojo</option>
+                          <option value="ojota">Ojota</option>
+                          <option value="ojodu">Ojodu Berger</option>
+                          <option value="ojuelegba">Ojuelegba</option>
+                          <option value="okoko">Okokomaiko</option>
+                          <option value="olodi apapa">Olodi Apapa</option>
+                          <option value="omole phase 1">Omole Phase 1</option>
+                          <option value="omole phase 2">Omole Phase 2</option>
+                          <option value="onipanu">Onipanu</option>
+                          <option value="oniru">Oniru</option>
+                          <option value="orile-agege">Orile Agege</option>
+                          <option value="osapa london">Osapa London</option>
+                          <option value="osborne">Osborne</option>
+                          <option value="oshodi">Oshodi-Isolo</option>
+                          <option value="palm groove">Palm Groove</option>
+                          <option value="park view">Park View</option>
+                          <option value="satellite town">Satelite Town</option>
+                          <option value="shomolu">Shomolu</option>
+                          <option value="surulere">Surulere</option>
+                          <option value="tird roundabout">
+                            Third Roundabout, Lekki
+                          </option>
+                          <option value="trade fair">Trade Fair</option>
+                          <option value="victoria island">
+                            Victoria Island
+                          </option>
+                          <option value="volkswagen">Volkswagen</option>
+                          <option value="yaba">Yaba</option>
+                        </select>
+                      </div>
+                      <!-- <div class="content"> -->
+                      <div class="input-group address2">
+                        <span class="input-group-addon">
+                          <i class="material-icons">location_on</i>
+                        </span>
+                        <select
+                          class="form-control"
+                          name="destination"
+                          id="address2"
+                        >
+                          <option value="">Drop Off</option>
+                          <option value="abraham adesanya">
+                            Abraham Adesanya
+                          </option>
+                          <option value="abule egba">Abule Egba</option>
+                          <option value="agege">Agege</option>
+                          <option value="agungi femi">Agungi Femi</option>
+                          <option value="ajah">Ajah</option>
+                          <option value="ajao estate">Ajao Estate</option>
+                          <option value="alaba">Alaba</option>
+                          <option value="alausa">Alausa</option>
+                          <option value="alimosho">Alimosho</option>
+                          <option value="alpha beach">Alpha Beach</option>
+                          <option value="amuwo odofin">Amuwo Odofin</option>
+                          <option value="anthony">Anthony</option>
+                          <option value="apapa">Apapa</option>
+                          <option value="badore">Badore</option>
+                          <option value="banana island">Banana Island</option>
+                          <option value="bariga">Bariga</option>
+                          <option value="chevron">Chevron VGC</option>
+                          <option value="chisco">Chisco</option>
+                          <option value="costain">Costain</option>
+                          <option value="dolphin estate">Dolphin Estate</option>
+                          <option value="egbeda">Egbeda</option>
+                          <option value="festac">Festac</option>
+                          <option value="gbagada">Gbagada</option>
+                          <option value="gowon estate">
+                            Gowon Estate, Ipaja
+                          </option>
+                          <option value="ifako-ijaye">Ifako Ijaye</option>
+                          <option value="iba">Iba</option>
+                          <option value="idimu">Idimu</option>
+                          <option value="igando">igando</option>
+                          <option value="iganmu">Iganmu</option>
+                          <option value="iju-ishaga">Iju Ishaga</option>
+                          <option value="ijora">Ijora</option>
+                          <option value="ikeja">Ikeja</option>
+                          <option value="ikorodu">Ikorodu</option>
+                          <option value="ikoyi">Ikoyi</option>
+                          <option value="ikotun">Ikotun</option>
+                          <option value="iyanaoworo">Iyana-Oworo</option>
+                          <option value="lagos island">Lagos Island</option>
+                          <option value="lasu">LASU</option>
+                          <option value="lekki-phase 1">Lekki Phase 1</option>
+                          <option value="lekki-phase 2">Lekki Phase 2</option>
+                          <option value="magodo">Magodo</option>
+                          <option value="marina">Marina</option>
+                          <option value="maryland">Maryland</option>
+                          <option value="mile 2">Mile 2</option>
+                          <option value="mile 12">Mile 12</option>
+                          <option value="mma1">
+                            Muritala Muhammed Airport 1
+                          </option>
+                          <option value="mma2">
+                            Muritala Muhammed Airport 2
+                          </option>
+                          <option value="mushin">Mushin</option>
+                          <option value="ketu">Ketu</option>
+                          <option value="navy town">Navy Town</option>
+                          <option value="obalende">Obalende</option>
+                          <option value="ogba">Ogba</option>
+                          <option value="ojo">Ojo</option>
+                          <option value="ojota">Ojota</option>
+                          <option value="ojodu">Ojodu Berger</option>
+                          <option value="ojuelegba">Ojuelegba</option>
+                          <option value="okoko">Okokomaiko</option>
+                          <option value="olodi apapa">Olodi Apapa</option>
+                          <option value="omole phase 1">Omole Phase 1</option>
+                          <option value="omole phase 2">Omole Phase 2</option>
+                          <option value="onipanu">Onipanu</option>
+                          <option value="oniru">Oniru</option>
+                          <option value="orile-agege">Orile Agege</option>
+                          <option value="osapa london">Osapa London</option>
+                          <option value="osborne">Osborne</option>
+                          <option value="oshodi">Oshodi-Isolo</option>
+                          <option value="palm groove">Palm Groove</option>
+                          <option value="park view">Park View</option>
+                          <option value="satellite town">Satelite Town</option>
+                          <option value="shomolu">Shomolu</option>
+                          <option value="surulere">Surulere</option>
+                          <option value="tird roundabout">
+                            Third Roundabout, Lekki
+                          </option>
+                          <option value="trade fair">Trade Fair</option>
+                          <option value="victoria island">
+                            Victoria Island
+                          </option>
+                          <option value="volkswagen">Volkswagen</option>
+                          <option value="yaba">Yaba</option>
+                        </select>
+                      </div>
+
+                      <!-- <div class="content">
+                      <div class="input-group address1">
+                        <label
+                          style="color: black; margin-right: 0%"
+                          for="pick-up"
+                          >Pick Up</label
+                        >
+                        <span class="input-group-addon">
+                          <i class="material-icons">location_on</i>
+                        </span>
+
+                        <input
+                          type="text"
+                          id="address1"
+                          name="pickup_address"
+                          class="form-control"
+                          placeholder="Pickup "
+                        />
+                      </div> -->
+                      <!-- <div class="input-group address2">
+                        <span class="input-group-addon">
+                          <i class="material-icons">location_on</i>
+                        </span>
+                        <input
+                          type="text"
+                          id="address2"
+                          name="delivery_address"
+                          placeholder="Drop Off"
+                          class="form-control"
+                        />
+                      </div> -->
+                      <div class="input-group address">
+                        <span class="input-group-addon">
+                          <i class="material-icons">location_on</i>
+                        </span>
+                        <input
+                          type="text"
+                          id="address"
+                          name="delivery_address"
+                          placeholder="Type Here"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="input-field">
+                        <select class="form-control" name="weight" id="weight">
+                          <option value="" disabled selected>
+                            -- Specific Address
+                          </option>
+                          <option value="200">0 - 1 kg</option>
+                          <option value="200">1 - 2 kg</option>
+                          <option value="300">2 - 3 kg</option>
+                          <option value="300">3 - 4 kg</option>
+                          <option value="300">4 - 5 kg</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="content-footer text-center">
+                      <button
+                        type="submit"
+                        class="btn btn-card btn-success btn-lg"
+                        id="find-estimate"
+                        onclick="compare()"
+                        name="check_estimate"
+                      >
+                        Get Estimate
+                      </button>
+                      <p class="alt-link pull-left">
+                        <a href="" class="">Track Package </a>
+                      </p>
+                    </div>
+                  </form>
+                </center>
+                <!-- end of form -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+            <div class="copyright pull-right">
+              &copy; WAVEUS LTD <a href="javascript:;" target="_blank"> </a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script src="js/jquery.js"></script>
+  <!-- <script src="js/bootstrap.js"></script>
+  <script src="js/material.js"></script> -->
+  <script src="js/slider.js"></script>
+  <script src="js/vegas.js"></script>
+  <!-- <script src="js/datepicker.js"></script>
+  <script src="js/material-kit.js"></script> -->
+  <script src="js/main.js"></script>
+  <script src="js/new2.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $("#show-estimate").hide();
+    });
+  </script>
+
+  <!-- good disable fiels -->
+  <!-- <script>
+    $(document).ready(function () {
+      validate();
+      $("#address1, #address2, #address").change(validate);
+    });
+
+    function validate() {
+      if (
+        $("#address1").val().length > 0 &&
+        $("#address2").val().length > 0 &&
+        $("#adress").val().length > 0 &&
+        $("#weight").val().length > 0
+      ) {
+        $("#find-estimate").prop("disabled", false);
+      } else {
+        $("#find-estimate").prop("disabled", true);
+      }
+    }
+  </script> -->
+  <!-- good -->
+  <script>
+    $(document).ready(function () {
+      $(document).on("click", "#find-estimate", function (e) {
+        e.preventDefault();
+        var address1 = $("#address1").val();
+        var address2 = $("#address2").val();
+        var address = $("#address").val();
+        var return_url = "index2.html";
+      });
+
+      //Try
+      $("#address").on("change", function () {
+        see = document.getElementById("address").value;
+        //console.log($('option:selected').text());
+        //console.log(see);
+      });
+      //console.log(see);
+      //Try End
+    });
+  </script>
+  <script
+    type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuJ6oSW4YtvZ3yjCu8aXoNxPVBfi__oBM&libraries=places"
+  ></script>
+
+  <!-- EMBEDDING MAP -->
+  <script>
+    var map;
+    google.maps.event.addDomListener(window, "load", initialize);
+    function initialize() {
+      // DECLARING MAP BOUNDRIES TO CENTER ON NIGERIA ONLY
+      var defaultBounds = new google.maps.LatLngBounds();
+      new google.maps.LatLng(6.465422, 3.406448),
+        new google.maps.LatLng(6.465422, 3.406448);
+      // new google.maps.LatLng(8.86763, 8.042843),
+      // new google.maps.LatLng(8.86763, 8.042843)
+      // map.setCenter(new google.maps.LatLng(6.465422, 3.406448))
+
+      var options = {
+        bounds: defaultBounds,
+        componentRestrictions: { country: "ng" },
+      };
+
+      // AUTOCOMPLETE DECLARATION FOR ADDRESS 1
+      var address = document.getElementById("address");
+      var autocomplete = new google.maps.places.Autocomplete(address, options);
+      // autocomplete.setTypes(["geocode"]);
+      google.maps.event.addListener(autocomplete, "place_changed", function () {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+          return;
+        }
+        // var add1Lat = place.geometry.location.lat();
+        // var add1Lng = place.geometry.location.lng();
+        // document.getElementById("lat").innerHTML = add1Lat;
+        // console.log(add1Lat + " " + add1Lng);
+        // document.getElementById("long").innerHTML = add1Lng;
+      });
+      //  AUTO COMPLETE DECLARATION FOR ADDRESS 2
+      // var address2 = document.getElementById("address2");
+      // var autocom = new google.maps.places.Autocomplete(address2, options);
+      // google.maps.event.addListener(autocom, "place_changed", function () {
+      //   var places = autocom.getPlace();
+      //   if (!places.geometry) {
+      //     return;
+      //   }
+      // add2Lat = places.geometry.location.lat();
+      // add2Lng = places.geometry.location.lng();
+      // document.getElementById("new").innerHTML = add2Lat;
+
+      // document.getElementById("year").innerHTML = add2Lng;
+      // });
+    }
+  </script>
+
+  <!-- main -->
+  <script>
+    // let address1 = $("#address1").val();
+    // let address2 = $("#address2").val();
+    // let see = document.getElementById("weight").value;
+    // let weight = document.getElementById("weight").innerHTML;
+
+    //ONCLICK FUNCTION
+    //function reply() {
+    // var address1Lat = document.getElementById("lat").innerText;
+    // var address1Lng = document.getElementById("long").innerText;
+    // addressLng = parseFloat(address1Lng);
+    // addressLat = parseFloat(address1Lat);
+    // var address2Lat = document.getElementById("new").innerText;
+    // addressesLat = parseFloat(address2Lat);
+    // var address2Lng = document.getElementById("year").innerText;
+    // addressesLng = parseFloat(address2Lng);
+    // let distance1 = {
+    //   lat: addressLat,
+    //   lng: addressLng,
+    // };
+    // let distance2 = {
+    //   lat: addressesLat,
+    //   lng: addressesLng,
+    // };
+    //Direction Parameters
+    // let directionsService = new google.maps.DirectionsService();
+    // let directionsRenderer = new google.maps.DirectionsRenderer();
+    // let DirectionsRequest = new google.maps.DirectionsRequest();
+    // directionsRenderer.setMap(map);
+    // directionsRenderer.setPanel(document.getElementById("direction")); // Existing map object displays directions
+    // Create route from existing points used for markers
+    // const route = {
+    //   origin: distance1,
+    //   destination: distance2,
+    //   travelMode: "DRIVING",
+    // };
+    //   directionsService.route(route, function (response, status) {
+    //     if (status !== "OK") {
+    //       window.alert("Directions request failed due to " + status);
+    //       return;
+    //     } else {
+    //       directionsRenderer.setDirections(response); // Add route to the map
+    //       var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
+    //       if (!directionsData) {
+    //         window.alert("Directions request failed here");
+    //         return;
+    //       } else {
+    //         var kilometer = directionsData.distance.text;
+    //         // converting duration of travel to min
+    //         time = directionsData.duration.value / 60;
+    //         //multiplying the time by price per min
+    //         let price = 75 * time;
+    //         // let price = 20 * time * weight;
+    //         if (parseFloat(kilometer) < 10) {
+    //           let price = 700;
+    //           document.getElementById("get_estimate").style.color = "green";
+    //           document.getElementById("get_estimate").innerHTML =
+    //             "Estimated price";
+    //           document.getElementById("estimate_result").innerHTML =
+    //             "Your bill is <b>&#8358</b><strong>" +
+    //             Math.ceil(price / 100.0) * 100 +
+    //             '</strong><br><a href="#">Proceed</a>';
+    //         } else if (parseFloat(kilometer) > 47) {
+    //           let price = 2500;
+    //           document.getElementById("get_estimate").style.color = "green";
+    //           document.getElementById("get_estimate").innerHTML =
+    //             "Estimated price";
+    //           document.getElementById("estimate_result").innerHTML =
+    //             "Your bill is <b>&#8358</b><strong>" +
+    //             Math.ceil(price / 100.0) * 100 +
+    //             '</strong><br><a href="#">Proceed</a>';
+    //         } else {
+    //           let bill = 30 * time;
+    //           let price = 0 + bill;
+    //           document.getElementById("get_estimate").style.color = "green";
+    //           document.getElementById("get_estimate").innerHTML =
+    //             "Estimated price";
+    //           document.getElementById("estimate_result").innerHTML =
+    //             "Your bill is <b>&#8358</b><strong>" +
+    //             Math.ceil(price / 100.0) * 100 +
+    //             '</strong><br><a href="#">Proceed</a>';
+    //         }
+    //       }
+    //     }
+    //   });
+    //}
+  </script>
+</html>

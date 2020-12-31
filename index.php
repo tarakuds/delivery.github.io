@@ -1,3 +1,7 @@
+<?php
+ // session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,6 +27,20 @@
     <!-- <link rel="stylesheet" href="css/responsiveness.css" /> -->
     <link rel="stylesheet" href="css/vegas.css" />
 
+    <style>
+      .proceed-btn{
+        margin-top: 10%;
+        padding:5px 15px;
+        color: #ffffff;
+        border: 2px solid #4CAF50;
+        border-radius: 5px;
+      }
+      .proceed-btn:hover{
+        text-decoration: none;
+        color:#ffffff;
+      }
+    </style>
+
     <title>Deliverable</title>
   </head>
   <body class="signup-page homepage-banner">
@@ -42,24 +60,20 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand hidden-xs" href="#"
-            ><img src="" style="width: 250px;"
+            ><img src="" style="width: 250px"
           /></a>
           <a class="navbar-brand visible-xs" href="#"
-            ><img src="#" style="width: 250px;" alt="logo"
+            ><img src="#" style="width: 250px" alt="logo"
           /></a>
         </div>
 
         <div class="collapse navbar-collapse" id="navigation-example">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="#">
-                Be a rider
-              </a>
+              <a href="#"> Be a rider </a>
             </li>
             <li>
-              <a href="#">
-                Invest
-              </a>
+              <a href="#"> Invest </a>
             </li>
             <li>
               <a href="#"> <i class="material-icons">folder</i>Business </a>
@@ -86,7 +100,18 @@
               <div class="card card-signup">
                 <!-- Form Estimation -->
                 <center>
-                  <form action="" class="" method="post">
+                  <?php
+                      //echo "yes i hav ebeenlmd<br/>";
+                      $address = "";
+                      if (isset($_POST['check_estimate'])){
+                        echo "I am clicked<br/>";
+                        $address = $_POST['pickup_address'];
+                        echo $address;
+                      }
+                     
+                  ?>
+                <!-- <form action="receipt_process.php" class="" method="post"> -->
+                   <form action="" class="" method="post">
                     <div id="lat" hidden></div>
                     <div id="long" hidden></div>
                     <div id="new" hidden></div>
@@ -106,7 +131,7 @@
                     <div
                       id="show-estimate"
                       class="header header-success text-center"
-                      style="display: none;"
+                      style="display: none"
                     ></div>
 
                     <div class="content">
@@ -118,6 +143,7 @@
                           type="text"
                           id="address1"
                           name="pickup_address"
+                          value=""
                           class="form-control"
                           placeholder="Pickup "
                         />
@@ -137,14 +163,14 @@
 
                       <div class="input-field">
                         <select class="form-control" name="weight" id="weight">
-                          <option value="" disabled selected
-                            >-- Estimated Weight</option
-                          >
-                          <option value="200"> 0 - 1 kg</option>
-                          <option value="200"> 1 - 2 kg</option>
-                          <option value="300"> 2 - 3 kg</option>
-                          <option value="300"> 3 - 4 kg</option>
-                          <option value="300"> 4 - 5 kg</option>
+                          <option value="" disabled selected>
+                            -- Estimated Weight
+                          </option>
+                          <option value="200">0 - 1 kg</option>
+                          <option value="200">1 - 2 kg</option>
+                          <option value="300">2 - 3 kg</option>
+                          <option value="300">3 - 4 kg</option>
+                          <option value="300">4 - 5 kg</option>
                         </select>
                       </div>
                     </div>
@@ -159,7 +185,7 @@
                         Get Estimate
                       </button>
                       <p class="alt-link pull-left">
-                        <a href="" class="">Track Package </a>
+                        <a href="#" class="">Track Package </a>
                       </p>
                     </div>
                   </form>
@@ -181,12 +207,8 @@
     </div>
   </body>
   <script src="js/jquery.js"></script>
-  <!-- <script src="js/bootstrap.js"></script>
-  <script src="js/material.js"></script> -->
   <script src="js/slider.js"></script>
   <script src="js/vegas.js"></script>
-  <!-- <script src="js/datepicker.js"></script>
-  <script src="js/material-kit.js"></script> -->
   <script src="js/main.js"></script>
   <script>
     $(document).ready(function () {
@@ -234,13 +256,6 @@
       //Try End
     });
   </script>
-  <!-- <script type="text/javascript">
-    $(document).load(function(){
-        $(".field_choice").on("click",function(e){
-            console.log($("#weight").val());
-        });
-    }
-  </script> -->
   <script
     type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuJ6oSW4YtvZ3yjCu8aXoNxPVBfi__oBM&libraries=places"
@@ -272,7 +287,7 @@
         var add1Lat = place.geometry.location.lat();
         var add1Lng = place.geometry.location.lng();
         document.getElementById("lat").innerHTML = add1Lat;
-
+        // console.log(add1Lat + " " + add1Lng);
         document.getElementById("long").innerHTML = add1Lng;
       });
       //  AUTO COMPLETE DECLARATION FOR ADDRESS 2
@@ -295,107 +310,119 @@
   <!-- main -->
   <script>
     let address1 = $("#address1").val();
-    let address2 = $("#address2").val();
-    let see = document.getElementById("weight").value;
-    // let weight = document.getElementById("weight").innerHTML;
-    // var see;
-    console.log(see);
+let address2 = $("#address2").val();
+let see = document.getElementById("weight").value;
+// let weight = document.getElementById("weight").innerHTML;
+// let see = document.getElementById("address2").value;
+// console.log(see);
+// console.log(address2);
 
-    //ONCLICK FUNCTION
-    function reply() {
-      var address1Lat = document.getElementById("lat").innerText;
+//ONCLICK FUNCTION
+function reply() {
+  
+  var address1Lat = document.getElementById("lat").innerText;
 
-      var address1Lng = document.getElementById("long").innerText;
+  var address1Lng = document.getElementById("long").innerText;
 
-      addressLng = parseFloat(address1Lng);
-      addressLat = parseFloat(address1Lat);
-      var address2Lat = document.getElementById("new").innerText;
+  addressLng = parseFloat(address1Lng);
+  addressLat = parseFloat(address1Lat);
+  var address2Lat = document.getElementById("new").innerText;
 
-      addressesLat = parseFloat(address2Lat);
-      var address2Lng = document.getElementById("year").innerText;
-      addressesLng = parseFloat(address2Lng);
+  addressesLat = parseFloat(address2Lat);
+  var address2Lng = document.getElementById("year").innerText;
+  addressesLng = parseFloat(address2Lng);
 
-      let distance1 = {
-        lat: addressLat,
-        lng: addressLng,
-      };
-      let distance2 = {
-        lat: addressesLat,
-        lng: addressesLng,
-      };
+  let distance1 = {
+    lat: addressLat,
+    lng: addressLng,
+  };
+  let distance2 = {
+    lat: addressesLat,
+    lng: addressesLng,
+  };
 
-      //Direction Parameters
-      let directionsService = new google.maps.DirectionsService();
-      let directionsRenderer = new google.maps.DirectionsRenderer();
-      // let DirectionsRequest = new google.maps.DirectionsRequest();
-      directionsRenderer.setMap(map);
-      directionsRenderer.setPanel(document.getElementById("direction")); // Existing map object displays directions
+  //Direction Parameters
+  let directionsService = new google.maps.DirectionsService();
+  let directionsRenderer = new google.maps.DirectionsRenderer();
+  // let DirectionsRequest = new google.maps.DirectionsRequest();
+  directionsRenderer.setMap(map);
+  directionsRenderer.setPanel(document.getElementById("direction")); // Existing map object displays directions
 
-      // Create route from existing points used for markers
-      const route = {
-        origin: distance1,
-        destination: distance2,
-        travelMode: "DRIVING",
-      };
+  // Create route from existing points used for markers
+  const route = {
+    origin: distance1,
+    destination: distance2,
+    travelMode: "DRIVING",
+  };
 
-      directionsService.route(route, function (response, status) {
-        if (status !== "OK") {
-          window.alert("Directions request failed due to " + status);
-          return;
+  directionsService.route(route, function (response, status) {
+    if (status !== "OK") {
+      window.alert("Directions request failed due to " + status);
+      return;
+    } else {
+      directionsRenderer.setDirections(response); // Add route to the map
+      var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
+      if (!directionsData) {
+        window.alert("Directions request failed here");
+      } else {
+        var kilometer = directionsData.distance.text;
+        // converting duration of travel to min
+        time = directionsData.duration.value / 60;
+
+        //multiplying the time by price per min
+       var prices;
+        let price = 75 * time;
+        if (parseFloat(kilometer) <= 10) {
+          let price = 700;
+          document.getElementById("get_estimate").style.color = "green";
+          document.getElementById("get_estimate").innerHTML =
+            "Estimated price";
+            var prices =  Math.ceil(price / 100.0) * 100
+          document.getElementById("estimate_result").innerHTML =
+            "Your bill is <b>&#8358</b><strong>" +
+           prices +
+            '</strong><br><a href="#">Proceed</a>';
+            // console.log("price is: "+prices);
+            return prices;
+        } else if (parseFloat(kilometer) >= 47) {
+          let price = 2500;
+          document.getElementById("get_estimate").style.color = "green";
+          document.getElementById("get_estimate").innerHTML =
+            "Estimated price";
+            var prices =  Math.ceil(price / 100.0) * 100
+          document.getElementById("estimate_result").innerHTML =
+            "Your bill is <b>&#8358</b><strong>" +
+            prices +
+            '</strong><br><a href="#">Proceed</a>';
+            // console.log("price is: "+prices);
+            return prices;
         } else {
-          directionsRenderer.setDirections(response); // Add route to the map
-          var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
-          if (!directionsData) {
-            window.alert("Directions request failed here");
-            return;
-          } else {
-            var kilometer = directionsData.distance.text;
-            // converting duration of travel to min
-            time = directionsData.duration.value / 60;
-
-            //multiplying the time by price per min
-            let price = 75 * time;
-            // let price = 20 * time * weight;
-            if (parseFloat(kilometer) < 10) {
-              let price = 700;
-              document.getElementById("get_estimate").style.color = "green";
-              document.getElementById("get_estimate").innerHTML =
-                "Estimated price";
-              document.getElementById("estimate_result").innerHTML =
-                "Your bill is <b>&#8358</b><strong>" +
-                Math.ceil(price / 100.0) * 100 +
-                '</strong><br><a href="#">Proceed</a>';
-            } else if (parseFloat(kilometer) > 47) {
-              let price = 2500;
-              document.getElementById("get_estimate").style.color = "green";
-              document.getElementById("get_estimate").innerHTML =
-                "Estimated price";
-              document.getElementById("estimate_result").innerHTML =
-                "Your bill is <b>&#8358</b><strong>" +
-                Math.ceil(price / 100.0) * 100 +
-                '</strong><br><a href="#">Proceed</a>';
-            } else {
-              let bill = 30 * time;
-              let price = 0 + bill;
-              document.getElementById("get_estimate").style.color = "green";
-              document.getElementById("get_estimate").innerHTML =
-                "Estimated price";
-              document.getElementById("estimate_result").innerHTML =
-                "Your bill is <b>&#8358</b><strong>" +
-                Math.ceil(price / 100.0) * 100 +
-                '</strong><br><a href="#">Proceed</a>';
-            }
-
-            // document.getElementById("get_estimate").style.color = "green";
-            // document.getElementById("get_estimate").innerHTML =
-            //   "Estimated price";
-            // document.getElementById("estimate_result").innerHTML =
-            //   "Your bill is <b>&#8358</b><strong>" +
-            //   Math.ceil(price / 100.0) * 100 +
-            //   '</strong><br><a href="#">Proceed</a>';
-          }
+          let bill = 30 * time;
+          let price = 0 + bill;
+          document.getElementById("get_estimate").style.color = "#4CAF50";
+          document.getElementById("get_estimate").innerHTML =
+            "Estimated price";
+          var prices =  Math.ceil(price / 100.0) * 100
+          document.getElementById("estimate_result").innerHTML = "Your bill is <b>&#8358</b><strong>" +
+           prices +
+            `</strong><br><a class="proceed-btn" href="receipt.php">Proceed</a>`;
+            
+            return prices;
         }
-      });
+        console.log("price is: "+prices);
+      }
+      
     }
+    
+  });
+  let address1value= document.getElementById("address1").value  ;
+  console.log(address1value);  
+}
   </script>
+  <!-- <script src="js/click.js">
+    // var res = "success";
+  </script> -->
+  <?php
+   //echo "<script>document.writeln(res);</script>";
+?>
 </html>
