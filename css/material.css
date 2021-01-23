@@ -14,7 +14,7 @@
  
  */
 body {
-  background-color: #cccccc;
+  background-color: rgba(150, 112, 112, 0.14);
 }
 
 body.inverse {

@@ -98,21 +98,24 @@ var districts = {
     ],
   },
 };
+
 function compare() {
   var destination = document.getElementById("address2").value;
   var pick = document.getElementById("address1").value;
-  console.log(pick + " " + destination);
+  var address = "you";
   //   convert destination and pickup valyues to lowercase,
-  destination = destination.toLowerCase();
-  pick = pick.toLowerCase();
-  if (pick == "ojuelegba, nigeria" && destination == "mushin, lagos, nigeria") {
-    document.getElementById("get_estimate").style.color = "green";
-    document.getElementById("get_estimate").innerHTML = "Estimated price";
-    document.getElementById("estimate_result").innerHTML =
-      "Your bill is <b>&#8358</b><strong>700</strong";
-    console.log(typeof pick);
-  }
-  // console.log(Object.keys(districts.mainland)[0].includes());
+   destination = destination.toLowerCase();
+   pick = pick.toLowerCase();
+   console.log(pick + " " + destination);
+
+   var pickArray = pick.split(" ");
+   var destinationArray = destination.split(" ");
+   console.log(pickArray);
+   console.log(destinationArray);
+
+   
+  // console.log(Object.keys(districts.mainland)[0].includes(pick));
+  console.log(districts.mainland.district1.includes(pick));
 
   //DECLARING PRICES
   //Linking Objects to districts
@@ -124,127 +127,187 @@ function compare() {
   var placeid1 = districts.island.district1;
   var placeid2 = districts.island.district2;
 
+  if(placemd1.includes(pickArray[0])){
+      console.log("This is "+pickArray);
+  }else(
+      console.log("An error occured")
+  )
+
+
+  let price= 0;
   //FOR MAINLAND
-  if (placemd1.includes(pick) == true) {
-    if (placemd1.includes(destination) == true) {
-      let price = 700;
-      document.getElementById("get_estimate").style.color = "green";
-      document.getElementById("get_estimate").innerHTML = "Estimated price";
-      document.getElementById("estimate_result").innerHTML =
-        "Your bill is <b>&#8358</b><strong>" +
-        price +
-        '</strong><br><a href="#">Proceed</a>';
+  if (placemd1.includes(pickArray[0]) == true) {  
+    if (placemd1.includes(destinationArray[0]) == true) {
+      price = 700;
+      console.log("price is 700");return price;
+    } else if (placemd2.includes(destinationArray[0]) == true) {
+       price = 1400;
+      console.log("price is 1400");
+    } else if (placemd3.includes(destinationArray[0]) == true) {
+      price = 1600;
+      console.log("price is 1600");
+    } else if (placemd4.includes(destinationArray[0]) == true) {
+      price = 1800;
+      console.log("price is 1800");
+    } else if (placemd5.includes(destinationArray[0]) == true) {
+      price = 2000;
+      console.log("price is 2000");
+    } else if (placeid1.includes(destinationArray[0]) == true) {
+       price = 1400;
+      console.log("price is 1400");
+    } else if (placeid2.includes(destinationArray[0]) == true) {
+       price = 1800;
+      console.log("price is 1800");return price;
+    }
+  } else if (placemd2.includes(pickArray[0]) == true) {
+    if (placemd1.includes(destinationArray[0]) == true) {
+      price = 1200;
+      console.log("price is 1200");
+    } else if (placemd2.includes(destinationArray[0]) == true) {
+      price = 700;
       console.log("price is 700");
-    } else if (placemd2.includes(destination) == true) {
-      console.log("price is 1400");
-    } else if (placemd3.includes(destination) == true) {
-      console.log("price is 1600");
-    } else if (placemd4.includes(destination) == true) {
-      console.log("price is 1800");
-    } else if (placemd5.includes(destination) == true) {
-      console.log("price is 2000");
-    } else if (placeid1.includes(destination) == true) {
-      console.log("price is 1400");
-    } else if (placeid2.includes(destination) == true) {
-      console.log("price is 1800");
-    }
-  } else if (placemd2.includes(pick) == true) {
-    if (placemd1.includes(destination) == true) {
+    } else if (placemd3.includes(destinationArray[0]) == true) {
+      price = 1200;
       console.log("price is 1200");
-    } else if (placemd2.includes(destination) == true) {
-      console.log("price is 700");
-    } else if (placemd3.includes(destination) == true) {
-      console.log("price is 1200");
-    } else if (placemd4.includes(destination) == true) {
+    } else if (placemd4.includes(destinationArray[0]) == true) {
+      price = 1600;
       console.log("price is 1600");
-    } else if (placemd5.includes(destination) == true) {
+    } else if (placemd5.includes(destinationArray[0]) == true) {
+      price = 2200;
       console.log("price is 2200");
-    } else if (placeid1.includes(destination) == true) {
+    } else if (placeid1.includes(destinationArray[0]) == true) {
+      price = 1600;
       console.log("price is 1600");
-    } else if (placeid2.includes(destination) == true) {
+    } else if (placeid2.includes(destinationArray[0]) == true) {
+      price = 2000;
       console.log("price is 2000");
-    }
-  } else if (placemd3.includes(pick) == true) {
-    if (placemd1.includes(destination) == true) {
+    }    
+   } else if (placemd3.includes(pickArray[0]) == true) {
+    if (placemd1.includes(destinationArray[0]) == true) {
+      price = 1400;
       console.log("price is 1400");
-    } else if (placemd2.includes(destination) == true) {
+    } else if (placemd2.includes(destinationArray[0]) == true) {
+      price = 1200;
       console.log("price is 1200");
-    } else if (placemd3.includes(destination) == true) {
+    } else if (placemd3.includes(destinationArray[0]) == true) {
+      price = 1000;
       console.log("price is 1000");
-    } else if (placemd4.includes(destination) == true) {
+    } else if (placemd4.includes(destinationArray[0]) == true) {
+      price = 1800;
       console.log("price is 1800");
-    } else if (placemd5.includes(destination) == true) {
+    } else if (placemd5.includes(destinationArray[0]) == true) {
+      price = 2000;
       console.log("price is 2000");
-    } else if (placeid1.includes(destination) == true) {
+    } else if (placeid1.includes(destinationArray[0]) == true) {
+      price = 1800;
       console.log("price is 1800");
-    } else if (placeid2.includes(destination) == true) {
+    } else if (placeid2.includes(destinationArray[0]) == true) {
+      price = 2200;
       console.log("price is 2200");
     }
-  } else if (placemd4.includes(pick) == true) {
-    if (placemd1.includes(destination) == true) {
+  } else if (placemd4.includes(pickArray[0]) == true) {
+    if (placemd1.includes(destinationArray[0]) == true) {
+      price = 1600;
       console.log("price is 1600");
-    } else if (placemd2.includes(destination) == true) {
+    } else if (placemd2.includes(destinationArray[0]) == true) {
+      price = 1400;
       console.log("price is 1400");
-    } else if (placemd3.includes(destination) == true) {
+    } else if (placemd3.includes(destinationArray[0]) == true) {
+      price = 1600;
       console.log("price is 1600");
-    } else if (placemd4.includes(destination) == true) {
+    } else if (placemd4.includes(destinationArray[0]) == true) {
+      price = 1000;
       console.log("price is 1000");
-    } else if (placemd5.includes(destination) == true) {
+    } else if (placemd5.includes(destinationArray[0]) == true) {
+      price = 2000;
       console.log("price is 2000");
-    } else if (placeid1.includes(destination) == true) {
+    } else if (placeid1.includes(destinationArray[0]) == true) {
+      price = 2000;
       console.log("price is 2000");
-    } else if (placeid2.includes(destination) == true) {
+    } else if (placeid2.includes(destinationArray[0]) == true) {
+      price = 2500;
       console.log("price is 2500");
     }
-  } else if (placemd5.includes(pick) == true) {
-    if (placemd1.includes(destination) == true) {
+  } else if (placemd5.includes(pickArray[0]) == true) {
+    if (placemd1.includes(destinationArray[0]) == true) {
+      price = 1800;
       console.log("price is 1800");
-    } else if (placemd2.includes(destination) == true) {
+    } else if (placemd2.includes(destinationArray[0]) == true) {
+      price = 2000;
       console.log("price is 2000");
-    } else if (placemd3.includes(destination) == true) {
+    } else if (placemd3.includes(destinationArray[0]) == true) {
+      price = 1600;
       console.log("price is 1600");
-    } else if (placemd4.includes(destination) == true) {
+    } else if (placemd4.includes(destinationArray[0]) == true) {
+      price = 1800;
       console.log("price is 1800");
-    } else if (placemd5.includes(destination) == true) {
+    } else if (placemd5.includes(destinationArray[0]) == true) {
+      price = 1000;
       console.log("price is 1000");
-    } else if (placeid1.includes(destination) == true) {
+    } else if (placeid1.includes(destinationArray[0]) == true) {
+      price = 2200;
       console.log("price is 2200");
-    } else if (placeid2.includes(destination) == true) {
+    } else if (placeid2.includes(destinationArray[0]) == true) {
+      price = 2500;
       console.log("price is 2500");
     }
   }
   //DECLARING FOR ISLAND
-  else if (placeid1.includes(pick) == true) {
-    if (placemd1.includes(destination) == true) {
+  else if (placeid1.includes(pickArray[0]) == true) {
+    if (placemd1.includes(destinationArray[0]) == true) {
+      price = 1400;
       console.log("price is 1400");
-    } else if (placemd2.includes(destination) == true) {
+    } else if (placemd2.includes(destinationArray[0]) == true) {
+      price = 1600;
       console.log("price is 1600");
-    } else if (placemd3.includes(destination) == true) {
+    } else if (placemd3.includes(destinationArray[0]) == true) {
+      price = 1800;
       console.log("price is 1800");
-    } else if (placemd4.includes(destination) == true) {
+    } else if (placemd4.includes(destinationArray[0]) == true) {
+      price = 2000;
       console.log("price is 2000");
-    } else if (placemd5.includes(destination) == true) {
+    } else if (placemd5.includes(destinationArray[0]) == true) {
+      price = 2200;
       console.log("price is 2200");
-    } else if (placeid1.includes(destination) == true) {
+    } else if (placeid1.includes(destinationArray[0]) == true) {
+      price = 800;
       console.log("price is 800");
-    } else if (placeid2.includes(destination) == true) {
+    } else if (placeid2.includes(destinationArray[0]) == true) {
+      price = 1400;
       console.log("price is 1400");
-    }
-  } else if (placeid2.includes(pick) == true) {
-    if (placemd1.includes(destination) == true) {
+  }
+     } 
+  else if (placeid2.includes(pickArray[0]) == true) {
+    if (placemd1.includes(destinationArray[0]) == true) {
+      price = 1600;
       console.log("price is 1600");
-    } else if (placemd2.includes(destination) == true) {
+    } else if (placemd2.includes(destinationArray[0]) == true) {
+      price = 1900;
       console.log("price is 1900");
-    } else if (placemd3.includes(destination) == true) {
+    } else if (placemd3.includes(destinationArray[0]) == true) {
+      price = 2000;
       console.log("price is 2000");
-    } else if (placemd4.includes(destination) == true) {
+    } else if (placemd4.includes(destinationArray[0]) == true) {
+      price = 2500;
       console.log("price is 2500");
-    } else if (placemd5.includes(destination) == true) {
+    } else if (placemd5.includes(destinationArray[0]) == true) {
+      price = 2500;
       console.log("price is 2500");
-    } else if (placeid1.includes(destination) == true) {
+    } else if (placeid1.includes(destinationArray[0]) == true) {
+      price = 1400;
       console.log("price is 1400");
-    } else if (placeid2.includes(destination) == true) {
+    } else if (placeid2.includes(destinationArray[0]) == true) {
+      price = 1000;
       console.log("price is 1000");
     }
   }
+   // COMBINED ANSWER
+   document.getElementById("get_estimate").style.color = "green";
+   document.getElementById("get_estimate").innerHTML = "Estimated price";
+   document.getElementById("estimate_result").innerHTML =
+     "Your bill is <b>&#8358</b><strong>" +
+     price +
+     '</strong><br><a class="proceed-btn" href="contact.php">Proceed</a>';
+   console.log("This roduct is costing"+price);
+  return address;
 }
