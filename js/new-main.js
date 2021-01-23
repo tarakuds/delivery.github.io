@@ -401,7 +401,7 @@ var districts = {
      document.getElementById("estimate_result").innerHTML =
        "Your bill is <b>&#8358</b><strong>" +
        price +
-       '</strong><br><a class="proceed-btn" href="contact.php">Proceed</a>';
+       '</strong><br><a class="proceed-btn" href="contact.html">Proceed</a>';
      console.log("This roduct is costing"+price);
     return address;
   }
